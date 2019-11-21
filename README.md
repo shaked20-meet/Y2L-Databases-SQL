@@ -4,7 +4,7 @@ Today, we are continuing creating <b>our awesome online shop!</b>
 I don't want to see the <b>creativity</b> stop here. Keep it going!
 <br/>
 <br/>
-Firstly, <b>Clone</b> https://github.com/Your-Username/Y2L-Flask-Routing to your Desktop if you don't have it, and open the folder.
+We will be working in the Y2L-Flask-Routing folder from last lab. If you didn't clone the last lab, do so now.
 <br/>
 <br/>
 You can also use Today's lecture as reference if you forgot certain lines - https://tinyurl.com/y2-databases
