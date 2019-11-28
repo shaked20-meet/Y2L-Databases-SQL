@@ -6,9 +6,14 @@ Base = declarative_base()
 
 class Product(Base):
 	__tablename__ = 'products'
-	id = Column(Integer, primary_key=True)
+	id = Column(Integer, primary_key = True)
 	name = Column(String)
 	picture_link = Column(String)
 	description = (String)
-	price = Column(Float)
+	price = Column(Integer)
+
+class Cart(Base):
+	__tablename__ = 'cart'
+	id = Column(Integer, primary_key = True)
+	productID = Column(Integer)
 	

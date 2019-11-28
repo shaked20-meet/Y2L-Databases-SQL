@@ -1,0 +1,100 @@
+body{
+  background-color: #fff9e6;
+}
+
+#title{
+  font-family: arial;
+  font-size: 50px;
+  font-weight: bold; 
+  text-align: center;
+}
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  max-height: 350px;
+  margin: 0px;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+#pink{
+  position:absolute;
+  left:350px;
+  top:450px;
+}
+
+#red{
+  position:absolute;
+  left: 100px;
+  top:450px;
+}
+
+#green{
+  position: absolute;
+  left: 600px;
+  top:450px;
+}
+
+#blue{
+  position: absolute;
+  left:850px;
+  top:450px;
+}
+
+#yellow{
+  position: absolute;
+  left:1100px;
+  top:450px;
+}
+
+#pack{
+  position: absolute;
+  left:1350px;
+  top:450px;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color:#000;
+
+}
+
+li a {
+  display: block;
+  color: white;
+  padding: 16px 20px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;/*###################*/
+  color: white;
+}

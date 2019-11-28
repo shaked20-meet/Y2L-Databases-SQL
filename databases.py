@@ -20,7 +20,7 @@ def add_product(name, price, picture_link, description):
 	session.commit()
 
 def edit_product(id, price):
-	product_object = session.query(Product).filter_by(name = name).first()
+	product_object = session.query(Product).filter_by(id = id).first()
 	product_object.price = price
 	session.commit()
 
@@ -36,3 +36,15 @@ def return_product(id):
 	product = session.query(Product).filter_by(id = id).first()
 	return product
 
+def add_to_cart(productID):
+	productID_object = Cart(productID = productID)
+	session.add(productID_object)
+	session.commit()
+
+
+######################################################
+#add_product("Pink Macaron", 5, "/static/pink.jpg", "___")
+#print(del_product(1))
+#product_list = return_all_products()
+#print(product_list[0].price)
+edit_product(3, 5609)
