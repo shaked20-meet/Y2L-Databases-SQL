@@ -1,5 +1,5 @@
 body{
-  background-color: #fff9e6;
+  background-color: #F9FAF1;
 }
 
 h1{
@@ -62,4 +62,26 @@ h1{
   font-family: arial;
   font-size: 25px;
   font-weight: bold;  
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 16px 20px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
 }

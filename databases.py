@@ -1,4 +1,4 @@
-from model import Base, Product
+from model import Base, Product, Cart
 
 
 from sqlalchemy import create_engine
@@ -14,14 +14,14 @@ def add_product(name, price, picture_link, description):
 	product_object = Product(
 		name = name,
 		price = price,
-		picture_link = picture_link,
+ 		picture_link = picture_link,
 		description = description)
 	session.add(product_object)
 	session.commit()
 
-def edit_product(id, price):
+def edit_product(id, description):
 	product_object = session.query(Product).filter_by(id = id).first()
-	product_object.price = price
+	product_object.description = description
 	session.commit()
 
 def del_product(id):
@@ -40,11 +40,17 @@ def add_to_cart(productID):
 	productID_object = Cart(productID = productID)
 	session.add(productID_object)
 	session.commit()
+def return_cart():
+	items = session.query(Cart).all()
+	return items
 
+def remove_from_cart(productID):
+	session.query(Cart).filter_by(productID = productID).delete()
+	session.commit()
 
 ######################################################
-#add_product("Pink Macaron", 5, "/static/pink.jpg", "___")
-#print(del_product(1))
-#product_list = return_all_products()
-#print(product_list[0].price)
-edit_product(3, 5609)
+
+# cart_list = return_cart()
+# print(cart_list)
+# remove_from_cart(cart_list[0].productID)
+# print(cart_list)
