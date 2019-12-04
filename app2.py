@@ -22,7 +22,7 @@ def about():
 
 @app.route('/cart', methods = ['GET', 'POST'])
 def cart():
-	products_list = []
+	product_list = []
 	if request.method == 'POST':
 		product_id = request.form["product_info"]
 		add_to_cart(product_id)
@@ -30,11 +30,11 @@ def cart():
 	cart_items_id = return_cart()
 	for item in cart_items_id:
 		product = return_product(item.productID)
-		products_list.append(product)
+		product_list.append(product)
 
-	return render_template("cart.html", products_list = products_list)
+	return render_template("cart.html", product_list = product_list)
 
-@app.route('/log_in', methods = ['GET','POST'])
+@app.route('/log_in')
 def log_in():
 	return render_template("log in.html")
 
