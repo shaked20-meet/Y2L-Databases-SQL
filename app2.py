@@ -41,10 +41,23 @@ def log_in():
 @app.route('/admin_portal', methods = ['GET', 'POST'])
 def portal():
 	if request.method == 'POST':
+		products_list = return_all_products()
 		username = request.form["Username"]
 		password = request.form["Password"]
 		if username == "shaked20-meet" and password == "meetyr20":
-			return render_template("portal.html")
+			return render_template("portal.html", products_list = products_list)
 	return render_template("log in.html")
+@app.route('/edit', methods = ['GET', 'POST'])
+def edit():
+	if request.method == 'POST':
+		product = return_product(request.form["product_id"])
+		edit_product(product.id, request.form["name"], request.form["price"], request.form["description"], request.form["pic_link"])
+		return render_template("edit.html", product = product)
+	return render_template("edit.html")
+# @app.route('/delete')
+# def delete():
+# 	products_list = return_all_products()
+
+
 if __name__ == '__main__':
     app.run(debug=True)

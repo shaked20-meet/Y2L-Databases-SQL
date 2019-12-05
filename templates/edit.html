@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Product</title>
+</head>
+<body>
+	<h1>Edit Product</h1>
+	<form action="/edit" >
+		Product Name:<br>
+		<input type="text" name="name" >
+		<br>
+		Price:<br>
+		<input type="text" name="price">
+		Description:<br>
+		<input type="text" name="description">
+		Picture Link<br>
+		<input type="text" name="pic_link">
+		<br><br>
+		<form action="/edit" method="POST">
+			<input type="checkbox" name="product_id" value= {{ product.id }} checked="checked" style="opacity:0;">
+				<button type="submit" class="btn btn-dark">Edit Product</button>
+		</form>
+	</form>
+
+</body>
+</html>
