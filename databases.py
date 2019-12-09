@@ -26,6 +26,7 @@ def edit_product(id, name, price, description, picture_link):
 	product_object.picture_link = picture_link
 	product_object.description = description
 	session.commit()
+	return
 
 def del_product(id):
 	session.query(Product).filter_by(id = id).delete()

@@ -19,18 +19,25 @@
 
 			<div class="col-4">
 				<form action="/edit" method="POST">
-					<input type="checkbox" name="product_id" value= {{ product.id }} checked="checked" style="opacity:0;">
+					<input type="checkbox" name="id" value= {{ product.id }} checked="checked" style="opacity:0;">
 			   		<button type="submit" class="btn btn-dark">Edit Product</button>
 				</form>
 			</div>
 
 			<div class="col-4">
-				<form action="/delete">
+				<form action="/delete" method="POST">
+					<input type="checkbox" name="del_id" value= {{ product.id }} checked="checked" style="opacity:0;">
 			   		<button type="submit" class="btn btn-dark">Delete Product</button>
 				</form>
 			</div>
 		</div>
 	{% endfor %}
+	<form action="/edit_form">
+	<input type="submit" value = "Back to Home" class="btn btn-dark">
+	</form>
 
+	<form action="/add_form">
+	<input type="submit" value = "Add Product" class="btn btn-dark">
+	</form>
 </body>
 </html>

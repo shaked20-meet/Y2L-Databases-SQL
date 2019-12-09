@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<title>Edit Product</title>
 </head>
 <body>
-	<h1>Edit Product</h1>
-	<form action="/edit" >
+	<h1>Edit Product: {{ product.name }}</h1>
+	<form action="/edit_form" method="POST">
 		Product Name:<br>
-		<input type="text" name="name" >
+		<input type="text" name="name" value= {{ product.name }}>
 		<br>
 		Price:<br>
-		<input type="text" name="price">
+		<input type="text" name="price" value= {{ product.price }}>
+		<br>
 		Description:<br>
-		<input type="text" name="description">
+		<input type="text" name="description" value= {{ product.description }}>
+		<br>
 		Picture Link<br>
-		<input type="text" name="pic_link">
+		<input type="text" name="pic_link" value= {{ product.picture_link }}>
 		<br><br>
-		<form action="/edit" method="POST">
-			<input type="checkbox" name="product_id" value= {{ product.id }} checked="checked" style="opacity:0;">
-				<button type="submit" class="btn btn-dark">Edit Product</button>
-		</form>
+		<input type="hidden" name="product_id" value={{ product.id }}>
+		<button type="submit" class="btn btn-dark">Edit Product</button>
 	</form>
 
 </body>

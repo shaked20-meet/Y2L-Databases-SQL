@@ -47,17 +47,45 @@ def portal():
 		if username == "shaked20-meet" and password == "meetyr20":
 			return render_template("portal.html", products_list = products_list)
 	return render_template("log in.html")
+
 @app.route('/edit', methods = ['GET', 'POST'])
 def edit():
 	if request.method == 'POST':
-		product = return_product(request.form["product_id"])
-		edit_product(product.id, request.form["name"], request.form["price"], request.form["description"], request.form["pic_link"])
+		product_id = request.form["id"]
+		product = return_product(product_id)
 		return render_template("edit.html", product = product)
-	return render_template("edit.html")
-# @app.route('/delete')
-# def delete():
-# 	products_list = return_all_products()
 
+@app.route('/edit_form', methods = ['GET','POST'])
+def edit_form():
+	if request.method == 'POST':
+		product_id = request.form["product_id"]
+		name = request.form["name"]
+		price = request.form["price"]
+		description = request.form["description"]
+		pic_link = request.form["pic_link"]
+		edit_product(product_id, name, price, description, pic_link)
+		products_list = return_all_products()
+		return render_template("portal.html", products_list = products_list)
+	return render_template("home.html")
+
+@app.route('/delete', methods = ['POST'])
+def delete():
+	product_id = request.form["del_id"]
+	del_product(product_id)
+	products_list = return_all_products()
+	return render_template("portal.html", products_list = products_list)
+
+@app.route('/add_form', methods = ['GET','POST'])
+def add_form():
+	if request.method == 'POST':
+		name = request.form["add_name"]
+		price = request.form["add_price"]
+		description = request.form["add_description"]
+		pic_link = request.form["add_pic_link"]
+		add_product(name, price, description, pic_link)
+		products_list = return_all_products()
+		return render_template("portal.html", products_list = products_list)
+	return render_template("add.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
